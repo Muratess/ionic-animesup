@@ -1,0 +1,36 @@
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  
+  .bemvindo{
+    color: #585858;
+    text-align: center;
+    font-size: 190%;
+  }
+  
+  ion-toolbar{
+    --background: DodgerBlue;
+  }
+  
+  ion-title{
+    color: white;
+    text-align: center;
+  }
+  
+  ion-card{
+    --background: DodgerBlue;
+  }
+  
+  ion-card-subtitle{
+    color: white;
+  }
+  
+  ion-card-title{
+    color: white;
+  }
+  
+  ion-card-content{
+    color: white;
+  }
+  
