@@ -1,52 +1,43 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-searchbar></ion-searchbar>
-      <ion-title>
-        AnimesUp!
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div class="bemvindo">
-    Top Animes
-  </div>
-  <ion-content>
-      <ion-card class="welcome-card">
-        <ion-img src="/assets/fullmetal.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>1.</ion-card-subtitle>
-          <ion-card-title>Full Metal Alchemist</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>TV (64 eps)
-              Abril 2009 - Jul 2010</p>
-        </ion-card-content>
-      </ion-card>
-  
-      <ion-card class="welcome-card">
-        <ion-img src="/assets/kimi.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>2.</ion-card-subtitle>
-          <ion-card-title>Kimi no Na wa.</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>Filme (1 eps)
-              Agosto 2016 - Aug 2016</p>
-        </ion-card-content>
-      </ion-card>
-  
-      <ion-card class="welcome-card">
-        <ion-img src="/assets/steins.jpg"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>3.</ion-card-subtitle>
-          <ion-card-title>Steins;Gate</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>TV (24 eps)
-              Abril 2011 - Setembro 2011</p>
-        </ion-card-content>
-      </ion-card>
-  
-   
-  </ion-content>
-  
-  
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+    <ion-title>
+      AnimesUp!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="bemvindo">
+  Top Animes
+</div>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <img slot="start" src="/assets/fullmetal.jpg">
+      <ion-label>
+        <p>1º</p>
+        <p>Full Metal Alchemis</p>
+        <p>TV (64 eps) Abril 2009 - Jul 2010</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <img slot="start" src="/assets/kimi.jpg">
+    <ion-label>
+      <p>2º</p>
+      <p>Kimi no Na wa.</p>
+      <p>Filme (1 eps) Agosto 2016 - Aug 2016</p>
+    </ion-label>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <img slot="start" src="/assets/steins.jpg">
+      <ion-label>
+        <p>3º</p>
+        <p>Steins;Gate</p>
+        <p>TV (24 eps) Abril 2011 - Setembro 2011</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+  </ion-list>
+</ion-content>
