@@ -9,7 +9,12 @@ const routes: Routes = [
   { path: 'config', loadChildren: './pages/config/config.module#ConfigPageModule' },
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
   { path: 'acao', loadChildren: './pages/generos/acao/acao.module#AcaoPageModule' },
-  { path: 'aventura', loadChildren: './pages/generos/aventura/aventura.module#AventuraPageModule' }
+  { path: 'aventura', loadChildren: './pages/generos/aventura/aventura.module#AventuraPageModule' },
+  { path: 'horror', loadChildren: './pages/generos/horror/horror.module#HorrorPageModule' },
+  { path: 'luta', loadChildren: './pages/generos/luta/luta.module#LutaPageModule' },
+  { path: 'esporte', loadChildren: './pages/generos/esporte/esporte.module#EsportePageModule' },
+  { path: 'ecchi', loadChildren: './pages/generos/ecchi/ecchi.module#EcchiPageModule' },
+  { path: 'shoujo', loadChildren: './pages/generos/shoujo/shoujo.module#ShoujoPageModule' }
 
 ];
 @NgModule({
