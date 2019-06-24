@@ -7,10 +7,50 @@ ion-toolbar{
   text-align: center;
   } 
 }
-ion-button{
-    margin-left:35%;
-    margin-right:10%; 
-}
 ion-searchbar{
   width: 85%;
 }
+
+
+
+
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 75%;
+  margin: 0 auto;
+  z-index: 2;
+
+  &.top {
+      top: 5%;
+  }
+  span {
+      color: #fff;
+  }
+}
+
+ion-slides {
+  height: 100%;
+
+  .slide-inner {
+      width: 75%;
+      color: #fff;
+      background-color: #0072bc;
+      border-radius: 10px;
+
+      ion-item {
+          --background: rgba(255, 255, 255, 0.2);
+          --border-radius: 10px;
+
+          ion-input {
+              --color: #fff;
+          }
+      }
+  }
+}
+
+
+
+
