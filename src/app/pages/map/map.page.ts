@@ -15,7 +15,7 @@ export class MapPage implements OnInit {
 
   loadMap(){
 
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+    let latLng = new google.maps.LatLng(-2.9473409,-41.7323492);
 
     let mapOptions = {
       center: latLng,
@@ -24,6 +24,11 @@ export class MapPage implements OnInit {
     }
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    let marker = new google.maps.Marker({
+      position: latLng,
+      map: this.map
+    })
 
   }
   

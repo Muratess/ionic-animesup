@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'luta', loadChildren: './pages/generos/luta/luta.module#LutaPageModule' },
   { path: 'esporte', loadChildren: './pages/generos/esporte/esporte.module#EsportePageModule' },
   { path: 'ecchi', loadChildren: './pages/generos/ecchi/ecchi.module#EcchiPageModule' },
-  { path: 'shoujo', loadChildren: './pages/generos/shoujo/shoujo.module#ShoujoPageModule' }
+  { path: 'shoujo', loadChildren: './pages/generos/shoujo/shoujo.module#ShoujoPageModule' },
+  { path: 'pagamento', loadChildren: './pagamento/pagamento.module#PagamentoPageModule' }
 
 ];
 @NgModule({
