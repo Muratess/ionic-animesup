@@ -16,10 +16,9 @@
       <ion-card-title>Faça um Donate</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-        <p>Aplicação criada com intuíto de ajudar pessoas a encontrar os melhores mangás e animes só pra você!</p>
-        <div text-center>
-            <button expand="block" color="dark" ion-button (click) = "comprar()" color="light"> Efetuar Pagamento </button>
-        </div>
+      {{ product.description }}
+
+      <div #paypal id="paypal"></div>
     </ion-card-content>
   </ion-card>
 

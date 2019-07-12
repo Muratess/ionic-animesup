@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PayPal, PayPalPayment, PayPalConfiguration, PayPalPaymentDetails } from '@ionic-native/paypal/ngx';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
+declare var paypal;
 
 @Component({
   selector: 'app-pagamento',
@@ -7,34 +8,39 @@ import { PayPal, PayPalPayment, PayPalConfiguration, PayPalPaymentDetails } from
   styleUrls: ['./pagamento.page.scss'],
 })
 export class PagamentoPage implements OnInit {
+  @ViewChild('paypal') paypalElement: ElementRef;
 
-  constructor(private payPal: PayPal) {
+  product = {
+    price: 1.00,
+    description: 'Aplicação criada com intuíto de ajudar pessoas a encontrar os melhores mangás e animes só pra você!'
+  };
+  paidFor: boolean;
 
-  }
+  constructor() { }
 
- comprar(){
-   this.payPal.init({
-       PayPalEnvironmentProduction:'',
-       PayPalEnvironmentSandbox: 'AUwIhhywQBW05PzBC__lvYvON4PA9T5I9r97Rqt_w6LOazdVcTyd7l0BCHXicERfX6cdtNrkIMJAxzU9'
-   }).then(() => {
-     this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({
-       acceptCreditCards: false,
-       languageOrLocale: 'pt-BR',
-       merchantName: 'AnimesUp',
-       merchantPrivacyPolicyURL: '',
-       merchantUserAgreementURL: ''
-     })).then(() => {
-       let detail = new PayPalPaymentDetails('19.99', '00.00', '0.00');
-       let payment = new PayPalPayment('19.99', 'BRL', 'AnimesUp', 'Sale', detail);
-       this.payPal.renderSinglePaymentUI(payment).then((response) => {
-         console.log('pagamento efetuado')
-       }, () => {
-         console.log('erro ao renderizar o pagamento do paypal');
-       })
-     })
-   })
- }
   ngOnInit() {
+    paypal
+    .Buttons({
+      createOrder: (data, actions) => {
+        return actions.order.create({
+          purchase_units: [{
+            description:this.product.description,
+            amount: {
+              currency_code: 'USD',
+              value: this.product.price 
+            }
+          }]
+        });
+      },
+      onApprove: async (data, actions) => {
+        const order = await actions.order.capture();
+        this.paidFor = true;
+        console.log(order);
+      },
+      onError: err => {
+        console.log(err);
+      },
+    })
+    .render(this.paypalElement.nativeElement);
   }
-
 }
